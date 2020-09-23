@@ -1,0 +1,101 @@
+.task-wrapper{
+  background: #F5F5F5;
+  border-radius: 4px;
+  border-left: 8px solid #27AE60;
+  width: 100%;
+  padding: 18px 22px;
+  margin-bottom: 8px;
+}
+
+.task-wrapper.task-status-complete{
+  opacity: 0.7;
+}
+
+.tasks{
+  margin-top: 20px;
+}
+
+.task-upper-wrapper{
+  display: flex;
+}
+
+.task-status{
+  cursor: pointer;
+  position: relative;
+  bottom: 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.task-status.task-status-complete div{
+  width: 10px;
+  height: 10px;
+  background: #27AE60;
+  border-radius: 50%;
+}
+
+.task-name{
+  color: #111111;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.task-settings{
+  margin-top: 5px;
+  display: flex;
+  margin-left: 27px;
+}
+
+.task-date{
+  border-radius: 40px;
+  color: #27AE60;
+  background: rgba(39, 174, 96, 0.08);
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-tags{
+  display: flex;
+  margin-top: 8px;
+}
+
+.tag{
+  margin-left: 12px;
+  color: #757575;
+}
+
+.task-project{
+  color: #111111;
+  margin-top: 8px;
+  margin-left: 12px;
+}
+
+.add-task-button{
+  padding: 12px 20px;
+  width: 200px;
+  height: 48px;
+  background: #111111;
+  border-radius: 40px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.add-task-button:hover{
+  outline: none;
+}
+
+.add-task-button:focus{
+  outline: none;
+}
+
+.add-task-button:active{
+  border: none;
+}
