@@ -22,6 +22,9 @@ class Task{
 
 
   renderTask = () => {
+    if(this.mainElement){
+      return;
+    }
     const html = this.taskTemplate();
     this.place.insertAdjacentHTML('beforeend', html);
     this.mainElement = this.place.querySelector(`#${this.id}`);

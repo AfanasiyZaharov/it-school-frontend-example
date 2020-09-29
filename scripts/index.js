@@ -1,27 +1,4 @@
 
-
-// class Router{
-
-//   pages = [
-    
-//   ]
-
-//   contrsuctor(){
-//     this.hash = window.location.hash;
-//     this.setPage();
-//     window.addEventListener('hashchange', router);
-//   }
-  
-//   onHashChange = () => {
-//     this.hash = window.location.hash;
-//     this.setPage()
-//   }
-
-// }
-
-// new Router();
-
-
 class TaskManager{
   tasks = [];
 
@@ -31,6 +8,8 @@ class TaskManager{
       new Task('Подготовить еще одну', 'Важный проект', ['tag 1', 'tag 3'], 'Сегодня', document.querySelector('.tasks')),
     ];
     this.renderTasks();
+    this.modal = document.querySelector('.modal-base');
+    this.addListeners();
   }
 
   renderTasks(){
@@ -39,6 +18,36 @@ class TaskManager{
     });
   }
 
+  addListeners(){
+    document.querySelector('#add-task').addEventListener('click', ()=>{
+      this.insertModal();
+    });
+
+    document.querySelector('#close-modal').addEventListener('click', ()=>{
+      this.closeModal();
+    });
+
+    document.querySelector('#add-task-final').addEventListener('click', () =>{
+      this.createTask();
+    });
+  }
+
+  insertModal = () => {
+    this.modal.classList.remove('hidden');
+  }
+
+  createTask = () => {
+    const task = new Task(document.querySelector('#name').value, document.querySelector('#project').value, [], 'Сегодня', document.querySelector('.tasks'));
+    this.tasks.push(task);
+    this.renderTasks();
+    this.closeModal();
+  }
+
+  closeModal = () => {
+    this.modal.classList.add('hidden');
+    document.querySelector('#name').value = "";
+    document.querySelector('#project').value = "";
+  }
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
